@@ -1,26 +1,34 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import { Link } from 'react-router-dom'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+export default class App extends React.Component{
+  render(){
+    return (
+      <div>
+        <WorkoutCard value="overall"/>
+        <WorkoutCard value="arms"/>
+        <WorkoutCard value="legs"/>
+      </div>
+    );
+  }
 }
 
-export default App;
+export class WorkoutCard extends React.Component {
+  render(){
+    return (
+      <div className="card">
+        <div className="card-body">
+          <h5 className="card-title">{this.props.value.charAt(0).toUpperCase() + this.props.value.slice(1)}</h5>
+          <p className="card-text">The routine is here</p>
+          
+          <Link to={'/' + this.props.value}>
+            <button className="btn btn-primary">
+              View
+            </button>
+          </Link>
+        </div>
+      </div>
+    );
+  }
+}
