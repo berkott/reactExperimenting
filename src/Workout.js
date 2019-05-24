@@ -2,7 +2,7 @@ import React from 'react';
 
 export class overall extends React.Component{
   onSubmit = () => {
-    this.props.history.push('/')
+    this.props.history.push(process.env.PUBLIC_URL + '/')
   }
 
   render(){
@@ -25,7 +25,7 @@ export class overall extends React.Component{
 
 export class arms extends React.Component{
   onSubmit = () => {
-    this.props.history.push('/')
+    this.props.history.push(process.env.PUBLIC_URL + '/')
   }
 
   render(){
@@ -48,7 +48,7 @@ export class arms extends React.Component{
 
 export class legs extends React.Component{
   onSubmit = () => {
-    this.props.history.push('/')
+    this.props.history.push(process.env.PUBLIC_URL + '/')
   }
 
   render(){

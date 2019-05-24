@@ -6,9 +6,8 @@ import './index.css';
 import App from './App';
 import { overall, arms, legs } from './Workout';
 
-
 const routing = (
-    <Router>
+    <Router >
         <div>
             <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
                 <a style={{color: '#fff'}} className="navbar-brand">Workouts</a>
@@ -18,16 +17,16 @@ const routing = (
                 <div className="collapse navbar-collapse" id="navbarNav">
                     <ul className="navbar-nav">
                     <li className="nav-item active">
-                        <Link to="/">Home</Link>
+                        <Link to={ process.env.PUBLIC_URL + "/" }>Home</Link>
                     </li>
                     </ul>
                 </div>
             </nav>
             
-            <Route exact path="/" component={App} />
-            <Route path="/overall" component={overall} />
-            <Route path="/arms" component={arms} />
-            <Route path="/legs" component={legs} />
+            <Route exact path={ process.env.PUBLIC_URL + "/" } component={App} />
+            <Route path={ process.env.PUBLIC_URL + "/overall" } component={overall} />
+            <Route path={ process.env.PUBLIC_URL + "/arms" } component={arms} />
+            <Route path={ process.env.PUBLIC_URL + "/legs" } component={legs} />
         </div>
     </Router>
 );

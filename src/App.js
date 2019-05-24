@@ -22,7 +22,7 @@ export class WorkoutCard extends React.Component {
           <h5 className="card-title">{this.props.value.charAt(0).toUpperCase() + this.props.value.slice(1)}</h5>
           <p className="card-text">The routine is here</p>
           
-          <Link to={'/' + this.props.value}>
+          <Link to={ process.env.PUBLIC_URL + '/' + this.props.value}>
             <button className="btn btn-primary">
               View
             </button>
